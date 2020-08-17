@@ -72,10 +72,11 @@ function counter2() {
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(max){
-  return Math.round(Math.random() * Math.floor(max));
-}
-console.log(inning(3));
+function inning(){
+  return Math.round((Math.random() * 2));
+}// returns a random value of 0-2 
+// kinda wish the prompt wanted a value of 1-3 since I can write it! 
+console.log("Task 2 test: " + inning());
 
 /* Task 3: finalScore()
 
@@ -91,11 +92,15 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+// The below returns NaN instead of a number. UGH! 
+//
+function finalScoretest(team1, team2, inningNum){
+  console.log(team1 + ": " + (inning * inningNum) + " points");
+  console.log(team2 + ": " + (inning * inningNum) + " points");
 }
+finalScoretest("Home", "Away", 9);
+
+
 
 /* Task 4: 
 
@@ -118,8 +123,14 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function finalScore(baseInning,inningNum){
+  let scores = [];
+  for (i = 0; i < inningNum; i++){
+    // i = each inning
+    scores.push({"Inning": (i+1), "Home": baseInning(), "Away": baseInning()})
+  }
+  return scores;
 }
+console.log(finalScore(inning,9));
 
 
