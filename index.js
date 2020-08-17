@@ -14,9 +14,20 @@
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
 */
-function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+
+// testing to see if this works for converting: 
+//
+// function test([str1,str2]){
+//   return str1 + str1;
+// }
+// console.log(test(["foo","bar"]));
+
+function processFirstItem(stringList){
+  return callback(stringList[0]);
 }
+const stringList = ["str","str"]; // didn't work because I was missing the quotes 
+const callback = (str) => str + str; // initially wrote this differently
+console.log(processFirstItem(["foo", "bar"]));
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -27,15 +38,15 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * Answer:
  * counter1 has count function-scoped (defined within the function and can't be accessed later on), whereas counter2 has count outside of its scope.
  * 
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * Answer:
  * counter2. count is written outside of the function, so the function has to reach outisde its scope to find count.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * Answer:
  * counter1 is preferable when count is isolated to counterMaker. counter2 is preferable when count needs to change later on in the script.
 */
 
