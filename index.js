@@ -28,10 +28,15 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter1 has count function-scoped (defined within the function and can't be accessed later on), whereas counter2 has count outside of its scope.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter2. count is written outside of the function, so the function has to reach outisde its scope to find count.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * counter1 is preferable when count is isolated to counterMaker. counter2 is preferable when count needs to change later on in the script.
 */
 
 // counter1 code
