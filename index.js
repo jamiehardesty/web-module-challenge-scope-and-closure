@@ -92,14 +92,23 @@ finalScore(inning, 9) might return:
 
 */ 
 
+
+
 // The below returns NaN instead of a number. UGH! 
 //
-function finalScoretest(team1, team2, inningNum){
-  console.log(team1 + ": " + (inning * inningNum) + " points");
-  console.log(team2 + ": " + (inning * inningNum) + " points");
+function finalScoretest(inning, inningNum){
+  let scoreHome = 0; 
+  let scoreAway = 0;
+  for(let i = 0; i < inningNum; i++){
+    scoreHome += inning();
+    scoreAway += inning();
+  }
+  return {"Home": scoreHome,"Away": scoreAway};
 }
-finalScoretest("Home", "Away", 9);
-
+finalScoretest(inning, 9);
+console.log(finalScoretest(inning, 9));
+  // console.log("Home: " + scoreHome + " points");
+  // console.log("Away: " + scoreAway + " points");
 
 
 /* Task 4: 
@@ -125,12 +134,13 @@ Final Score: awayTeam - homeTeam */
 
 function finalScore(baseInning,inningNum){
   let scores = [];
+  let totals = [];
   for (i = 0; i < inningNum; i++){
     // i = each inning
-    scores.push({"Inning": (i+1), "Home": baseInning(), "Away": baseInning()})
+    scores.push({"Inning": (i+1), "Home": baseInning(), "Away": baseInning()});
   }
   return scores;
 }
 console.log(finalScore(inning,9));
-
+console.log("Final Score");
 
