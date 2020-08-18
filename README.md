@@ -63,8 +63,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+[x] dansRoll & zoesRoll are both closures. They're outside of the function personalDice.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+[x] The rolls on the d6 are changing but they both belong to Dan.
+
 c. What is the lexical scope of `newRoll`? 
+[x] Block scope.
 
 ### Task 2c - Exit Ticket
 

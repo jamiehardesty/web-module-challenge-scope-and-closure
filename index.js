@@ -74,9 +74,8 @@ Write a function called `inning` that returns a random number of points that a t
 
 function inning(){
   return Math.round((Math.random() * 2));
-}// returns a random value of 0-2 
-// kinda wish the prompt wanted a value of 1-3 since I can write it! 
-console.log("Task 2 test: " + inning());
+}// returns a random value of 0-2
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -89,11 +88,7 @@ finalScore(inning, 9) might return:
   "Home": 11,
   "Away": 5,
 }
-
 */ 
-
-
-
 // The below returns NaN instead of a number. UGH! 
 //
 function finalScoretest(inning, inningNum){
@@ -134,13 +129,17 @@ Final Score: awayTeam - homeTeam */
 
 function finalScore(baseInning,inningNum){
   let scores = [];
-  let totals = [];
+  let scoreHome = 0;
+  let scoreAway = 0;
   for (i = 0; i < inningNum; i++){
-    // i = each inning
+    scoreHome += baseInning();
+    scoreAway += baseInning();
     scores.push({"Inning": (i+1), "Home": baseInning(), "Away": baseInning()});
+
+    // scores.push({"Inning": (i+1), "Home": scoreHome += baseInning(), "Away": scoreAway += baseInning()});
   }
+  scores.push({"Final Score": null, "Home": scoreHome, "Away": scoreAway});
   return scores;
 }
 console.log(finalScore(inning,9));
-console.log("Final Score");
 
