@@ -114,7 +114,7 @@ Create a function called `scoreboard` that accepts the following parameters:
 (2) Callback function `inning`
 (3) A number of innings
 
-and returns the score at each pont in the game, like so:
+and returns the score at each point in the game, like so:
 1st inning: awayTeam - homeTeam
 2nd inning: awayTeam - homeTeam
 3rd inning: awayTeam - homeTeam
@@ -126,19 +126,23 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
-
+//           "getInningScore" / "inning"   
 function finalScore(baseInning,inningNum){
   let scores = [];
   let scoreHome = 0;
   let scoreAway = 0;
+   
   for (i = 0; i < inningNum; i++){
-    scoreHome += baseInning();
-    scoreAway += baseInning();
-    scores.push({"Inning": (i+1), "Home": baseInning(), "Away": baseInning()});
-
+    scoreHome = scoreHome + baseInning(); // 
+    scoreAway = scoreAway + baseInning();
+    // console.log(scores);
+    // console.log(scoreAway);
+    scores.push({"Inning": (i+1), "Home": scoreHome, "Away": scoreAway});
     // scores.push({"Inning": (i+1), "Home": scoreHome += baseInning(), "Away": scoreAway += baseInning()});
   }
-  scores.push({"Final Score": null, "Home": scoreHome, "Away": scoreAway});
+  scores.push({"Final Score": "", "Home": scoreHome, "Away": scoreAway});
+  // console.log(scoreHome);
+  // console.log("Final Score: " + "Home: " + scoreHome + " Away: " + scoreAway);
   return scores;
 }
 console.log(finalScore(inning,9));
