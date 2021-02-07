@@ -27,11 +27,11 @@ There are layers upon layers of nested functions within the game of baseball. Yo
 
 ### Task 1 - Set Up Project and Tests
 
-1. Fork repo and add TL as collaborator on Github
-2. Clone _your_ fork (not Lambda's repo by mistake!)
-3. `cd` into your newly cloned repository
-4. Create a new branch by typing `git checkout -b <firstName-lastName>`
-5. Work on your branch, push commits and create PR as usual
+[x] 1. Fork repo and add TL as collaborator on Github
+[x] 2. Clone _your_ fork (not Lambda's repo by mistake!)
+[x] 3. `cd` into your newly cloned repository
+[x] 4. Create a new branch by typing `git checkout -b <firstName-lastName>`
+[x] 5. Work on your branch, push commits and create PR as usual
 
 ### Task 2a - MVP code
 
@@ -63,8 +63,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+[x] dansRoll & zoesRoll are both closures. They're outside of the function personalDice.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+[x] The rolls on the d6 are changing but they both belong to Dan.
+
 c. What is the lexical scope of `newRoll`? 
+[x] Block scope.
 
 ### Task 2c - Exit Ticket
 
